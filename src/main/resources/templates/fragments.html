@@ -28,4 +28,16 @@
     </div>
 
 </body>
+
+<div th:fragment="list-jobs" th:if="${jobs} and ${jobs.size()}">
+
+    <table th:each="job, idx : ${jobs}" class="job-listing">
+        <tr th:each="val : ${job}">
+            <td><a th:text="${val.key}"></a></td>
+            <td><a th:text="${val.value}"></a></td>
+        </tr>
+    </table>
+
+</div>
+
 </html>
